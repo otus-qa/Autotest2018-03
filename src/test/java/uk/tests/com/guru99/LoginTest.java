@@ -15,12 +15,24 @@ public class LoginTest extends BaseTest {
     private Set<Cookie> cookies;
 
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
         getDriver().manage().deleteAllCookies();
         authorizeMe("email@email.com", "super_password");
         getDriver().manage().deleteAllCookies();
         authorizeMe("email@email.com", "super_password");
         getDriver().navigate().refresh();
+        Thread.sleep(20000);
+        System.out.println();
+    }
+
+    @Test
+    public void test2() throws InterruptedException {
+        getDriver().manage().deleteAllCookies();
+        authorizeMe("email@email.com", "super_password");
+        getDriver().manage().deleteAllCookies();
+        authorizeMe("email@email.com", "super_password");
+        getDriver().navigate().refresh();
+        Thread.sleep(20000);
         System.out.println();
     }
 }
